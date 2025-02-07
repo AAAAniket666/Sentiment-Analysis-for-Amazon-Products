@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Analysis Results</title>
+<body>
+  {% if reviews %}
+  <h1>Review Analysis</h1>
+  {% for review in reviews %}
+      <div>
+          <h2>{{ review.title }}</h2>
+          <p>{{ review.star_rating }}</p>
+          <p>{{ review.review_text }}</p>
+      </div>
+  {% endfor %}
+{% else %}
+  <h1>No reviews or data available.</h1>
+{% endif %}
+</body>
+<body>
+  <h1>Analysis Results</h1>
+  <div>
+      <h2>Star Rating Distribution</h2>
+      <img src="{{ star_image }}" alt="Star Ratings Graph">
+  </div>
+  <div>
+      <h2>Sentiment Analysis</h2>
+      <img src="{{ sentiment_image }}" alt="Sentiment Graph">
+  </div>
+</body>
+</html>
